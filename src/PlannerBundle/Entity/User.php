@@ -19,6 +19,21 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PlannerBundle\Entity\Task",mappedBy="user")
+     */
+    private $tasks;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PlannerBundle\Entity\Category",mappedBy="user")
+     */
+    private $categories;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PlannerBundle\Entity\Comment",mappedBy="user")
+     */
+    private $comments;
+
     public function __construct()
     {
         parent::__construct();
